@@ -1,6 +1,6 @@
 
 <h3 align="center">
-  TV Show List from Api
+  TV Show List from Api - With Redux-Saga
 </h3>
 
 <blockquote align="center">“Dreams don't work unless you do”!</blockquote>
@@ -25,6 +25,7 @@ Used to style code, TypeScript, Styled Component
 1. TypeScript
 2. Styled Component
 3. Context Api
+4. Redux Saga
 
 
 ## :memo: License
