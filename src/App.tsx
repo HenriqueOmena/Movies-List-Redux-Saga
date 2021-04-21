@@ -4,12 +4,13 @@ import { BrowserRouter } from "react-router-dom";
 import { Container } from "./App.styles";
 import { ModalProvider } from "hooks/useModal";
 import { Modal } from "components/Modal";
-import Provider from "store/config/provider";
+import Provider from "react-redux";
+import store from "features/store";
 
 function App() {
   return (
     <BrowserRouter>
-      <Provider>
+      <Provider store={store}>
         <ModalProvider>
           <Container>
             <Routes />
