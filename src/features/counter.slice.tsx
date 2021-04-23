@@ -1,24 +1,27 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface InitialState {
-  count: number;
+  value: number;
 }
 
 export const initialState: InitialState = {
-  count: 0,
+  value: 0,
 };
 
-type State = number;
-export const increment: CaseReducer<InitialState, PayloadAction<number>> = (state, action) =>  state.count
-export const decrement : CaseReducer<InitialState, PayloadAction<number>> = (state) => {state.count = state.count - 1;
-const countSlice = createSlice({
+export const increment: CaseReducer<InitialState, PayloadAction<number>> = (state, action) => {
+  state.value = state.value + 1;
+};
+export const decrement: CaseReducer<InitialState, PayloadAction<number>> = (state) => {
+  state.value = state.value - 1;
+};
+
+const countNumber = createSlice({
   name: "count",
   initialState: initialState as InitialState,
   reducers: {
     increment,
-    decrement
+    decrement,
   },
 });
 
-// export const { increment, decrement } = countSlice.actions;
-export default countSlice.reducer;
+export default countNumber.reducer;
