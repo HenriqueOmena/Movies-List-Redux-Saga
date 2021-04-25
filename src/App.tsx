@@ -4,8 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Container } from "./App.styles";
 import { ModalProvider } from "hooks/useModal";
 import { Modal } from "components/Modal";
-import Provider from "react-redux";
-import store from "features/store";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import Counter from "features/counter";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Provider store={store}>
         <ModalProvider>
           <Container>
+            <Counter />
             <Routes />
             <Modal />
           </Container>
