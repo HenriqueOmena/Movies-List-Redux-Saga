@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { apiTvMaze } from "api/config";
 import { Shows as RequestShows } from "store/shows.interface";
 import { RootState, AppThunk } from "../../app/store";
+import { fetchShows } from "./showsAPI";
 
 export interface statusShows extends RequestShows {
   status: "idle" | "loading" | "failed";
@@ -18,9 +19,8 @@ const initialState: statusShows = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const getAllShows = createAsyncThunk("shows/allShows", async () => {
-  const { data } = await apiTvMaze.get(`shows`);
   // The  we return becomes the `fulfilled` action payload
-  return data;
+  return fetchShows();
 });
 
 export const showsSlices = createSlice({
