@@ -6,7 +6,7 @@ import { ModalProvider } from "hooks/useModal";
 import { Modal } from "components/Modal";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import Counter from "features/counter";
+import Counter from "components/Counter";
 
 function App() {
   return (
