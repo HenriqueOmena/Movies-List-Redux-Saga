@@ -10,6 +10,7 @@ import {
   selectCount,
 } from "features/counter/counterSlice";
 import styles from "./Counter.module.css";
+import { setAllShows } from "features/shows/showsSlice";
 
 export default function Counter() {
   const count = useAppSelector(selectCount);
@@ -17,6 +18,8 @@ export default function Counter() {
   const [incrementAmount, setIncrementAmount] = useState("2");
 
   const incrementValue = Number(incrementAmount) || 0;
+  const shows = setAllShows();
+  console.log(shows);
 
   return (
     <div>
